@@ -1,0 +1,1 @@
+sap.ui.define(["offlineApp/offlineApp/controller/View1.controller"],function(e){"use strict";QUnit.module("View1 Controller");QUnit.test("I should test the View1 controller",function(n){var o=new e;o.onInit();n.ok(o)})});

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>offlineApp</title>
+		<script id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_fiori_3"
+			data-sap-ui-resourceroots='{"offlineApp.offlineApp": "./"}'
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+			data-sap-ui-async="true"
+			data-sap-ui-preload="async"
+			data-sap-ui-frameOptions="trusted">
+		</script>
+		
+		<script>
+		// Check that service workers are supported
+		if ('serviceWorker' in navigator) {
+		  // Use the window load event to keep the page load performant
+		  window.addEventListener('load', () => {
+		    navigator.serviceWorker.register('./service-worker.js');
+		  });
+		}
+		</script>
+		
+	</head>
+	<body class="sapUiBody">
+		<div data-sap-ui-component data-name="offlineApp.offlineApp" data-id="container" data-settings='{"id" : "offlineApp"}'></div>
+	</body>
+</html>
